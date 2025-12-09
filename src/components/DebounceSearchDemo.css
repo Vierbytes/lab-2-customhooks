@@ -213,6 +213,8 @@
   overflow-x: auto;
   margin: 0;
   font-size: 0.9rem;
+  color: #333;
+  font-family: 'Courier New', monospace;
   border: 1px solid #dee2e6;
 }
 

@@ -13,6 +13,7 @@
 
 import { usePagination } from '../hooks/usePagination';
 import './PaginationDemo.css';
+import './PaginationDemo.css';
 
 function PaginationDemo() {
   /**

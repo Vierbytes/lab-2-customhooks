@@ -1,7 +1,5 @@
 /**
  * PaginationDemo Styles
- *
- * Styles for the pagination demonstration component.
  */
 
 .pagination-demo {
@@ -19,13 +17,13 @@
   font-size: 2rem;
 }
 
-.pagination-demo > p {
+.demo-description {
   color: #666;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-.pagination-demo code {
+.demo-description code {
   background: #f4f4f4;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -34,94 +32,67 @@
   font-weight: 600;
 }
 
-/* Filter Section */
-.filter-section {
+/* Pagination Info */
+.pagination-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
   margin-bottom: 2rem;
 }
 
-.filter-label {
-  display: block;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.75rem;
+.pagination-info p {
+  margin: 0.5rem 0;
   font-size: 1.1rem;
 }
 
-.filter-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 1.1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  outline: none;
-  transition: all 0.3s ease;
-  background: #f8f9fa;
-}
-
-.filter-input:focus {
-  border-color: #667eea;
-  background: white;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-}
-
-/* Pagination Info */
-.pagination-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.pagination-info-text {
-  color: #666;
-  font-weight: 500;
-}
-
-.page-indicator {
-  color: #667eea;
+.pagination-info strong {
   font-weight: 700;
-  font-size: 1.1rem;
 }
 
-/* Todo List */
-.todo-list {
+/* Items List */
+.items-list {
+  margin-bottom: 2rem;
+}
+
+.items-list h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.items-list ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
-  min-height: 400px;
+  margin: 0;
 }
 
-.todo-item {
-  padding: 1rem 1.5rem;
+.item-card {
+  padding: 1.25rem 1.5rem;
   background: #f8f9fa;
   margin-bottom: 0.75rem;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   transition: all 0.2s ease;
+  border-left: 4px solid #667eea;
 }
 
-.todo-item:hover {
+.item-card:hover {
   background: #e9ecef;
   transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.todo-text {
+.item-card strong {
+  display: block;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
 }
 
-.todo-id {
-  color: #667eea;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+.item-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
 }
 
 /* Pagination Controls */
@@ -130,11 +101,12 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   border-top: 2px solid #f0f0f0;
+  margin-bottom: 2rem;
 }
 
-.pagination-button {
+.nav-button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -144,41 +116,78 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.pagination-button:hover:not(:disabled) {
+.nav-button:hover:not(:disabled) {
   background: #667eea;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
-.pagination-button:disabled {
-  opacity: 0.4;
+.nav-button:disabled {
+  opacity: 0.3;
   cursor: not-allowed;
   border-color: #ccc;
   color: #999;
 }
 
-.page-info {
-  font-weight: 700;
+/* Page Numbers */
+.page-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 45px;
+}
+
+.page-button:hover {
+  border-color: #667eea;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.page-button.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Hook State */
+.hook-state {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.hook-state h3 {
+  margin: 0 0 1rem 0;
   color: #333;
   font-size: 1.1rem;
-  padding: 0 1rem;
 }
 
-/* Empty State */
-.empty-state {
-  text-align: center;
-  padding: 3rem 2rem;
-  color: #999;
-  font-size: 1.1rem;
+.hook-state pre {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .pagination-demo {
     padding: 1.5rem;
@@ -188,18 +197,23 @@
     font-size: 1.5rem;
   }
 
-  .pagination-info {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
   .pagination-controls {
     flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  .pagination-button {
-    padding: 0.5rem 1rem;
+  .nav-button {
+    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
+  }
+
+  .page-numbers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-button {
+    min-width: 40px;
+    padding: 0.4rem 0.8rem;
   }
 }

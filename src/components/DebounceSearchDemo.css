@@ -1,7 +1,5 @@
 /**
  * DebounceSearchDemo Styles
- *
- * Styles for the debounce search demonstration component.
  */
 
 .debounce-demo {
@@ -9,7 +7,7 @@
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -19,13 +17,13 @@
   font-size: 2rem;
 }
 
-.debounce-demo > p {
+.demo-description {
   color: #666;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-.debounce-demo code {
+.demo-description code {
   background: #f4f4f4;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -34,17 +32,15 @@
   font-weight: 600;
 }
 
-/* Search Section */
-.search-section {
+/* Search Container */
+.search-container {
   margin-bottom: 2rem;
 }
 
-.search-label {
+.search-container label {
   display: block;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
   color: #333;
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
 }
 
 .search-input {
@@ -64,57 +60,111 @@
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
-/* Stats Section */
-.stats {
+/* Value Display */
+.value-display {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.stat-card {
+.value-box {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.value-box h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0.5rem 0;
+  word-break: break-word;
+}
+
+.value.debounced {
+  color: #764ba2;
+}
+
+.value-box small {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* API Info */
+.api-info {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1.5rem;
   border-radius: 12px;
   color: white;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.stat-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* Results Section */
-.results-section {
-  border-top: 2px solid #f0f0f0;
-  padding-top: 2rem;
-}
-
-.results-section h3 {
-  color: #333;
+.api-info h3 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
-.result-message {
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  color: #666;
-  text-align: center;
+.api-info p {
+  margin: 0.5rem 0;
   font-size: 1.1rem;
 }
 
-.results-list {
+.api-info strong {
+  font-weight: 700;
+}
+
+.info-text {
+  opacity: 0.9;
+  font-size: 0.95rem !important;
+  font-style: italic;
+}
+
+.reset-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Results */
+.search-results {
+  margin-bottom: 2rem;
+}
+
+.search-results h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.loading {
+  padding: 1.5rem;
+  background: #fff3cd;
+  border-radius: 8px;
+  color: #856404;
+  text-align: center;
+  font-weight: 600;
+}
+
+.search-results ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -123,7 +173,7 @@
 .result-item {
   padding: 1rem 1.5rem;
   background: #f8f9fa;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   border-radius: 8px;
   color: #333;
   transition: all 0.2s ease;
@@ -134,17 +184,39 @@
   transform: translateX(4px);
 }
 
-/* Loading State */
-.loading-message {
+.no-results {
   padding: 1.5rem;
-  background: #fff3cd;
-  border-radius: 12px;
-  color: #856404;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #999;
   text-align: center;
-  font-weight: 600;
 }
 
-/* Responsive Design */
+/* Hook State */
+.hook-state {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.hook-state h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.hook-state pre {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .debounce-demo {
     padding: 1.5rem;
@@ -154,11 +226,7 @@
     font-size: 1.5rem;
   }
 
-  .stats {
+  .value-display {
     grid-template-columns: 1fr;
-  }
-
-  .stat-value {
-    font-size: 2rem;
   }
 }

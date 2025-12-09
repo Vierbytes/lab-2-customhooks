@@ -44,7 +44,7 @@
 }
 
 .search-input {
-  width: 100%;
+  width: 94%;
   padding: 1rem 1.5rem;
   font-size: 1.1rem;
   border: 2px solid #e0e0e0;
@@ -52,10 +52,11 @@
   outline: none;
   transition: all 0.3s ease;
   background: #f8f9fa;
+  color: hsl(229, 76%, 66%);
 }
 
 .search-input:focus {
-  border-color: #667eea;
+  border-color: hsl(229, 76%, 66%);
   background: white;
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }

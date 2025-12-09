@@ -85,7 +85,7 @@
    ================================= */
 .demo-container {
   flex: 1;
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 2rem 2rem 4rem .1rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;

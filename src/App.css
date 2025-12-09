@@ -1,0 +1,128 @@
+/**
+ * App.css - Main Application Styles
+ *
+ * This stylesheet provides the overall layout and tab navigation
+ * for the custom hooks demo application.
+ */
+
+/* =================================
+   Root Container
+   ================================= */
+#root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* =================================
+   App Container
+   ================================= */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =================================
+   Header
+   ================================= */
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.app-header p {
+  margin: 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* =================================
+   Tab Navigation
+   ================================= */
+.tab-navigation {
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.tab-button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* =================================
+   Demo Container
+   ================================= */
+.demo-container {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* =================================
+   Footer
+   ================================= */
+.app-footer {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+/* =================================
+   Responsive Design
+   ================================= */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .tab-navigation {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .demo-container {
+    padding: 1rem;
+  }
+}

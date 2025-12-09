@@ -11,6 +11,7 @@
 #root {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-bottom: 2rem;
 }
 
 /* =================================
@@ -84,10 +85,11 @@
    ================================= */
 .demo-container {
   flex: 1;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  min-height: calc(100vh - 300px);
 }
 
 /* =================================

@@ -2,6 +2,10 @@
 
 This project demonstrates creating reusable React custom hooks from scratch. It implements two common patterns: pagination logic and input debouncing.
 
+![Custom Hooks Demo](./public/hooks.png)
+
+**Live Demo:** https://customhookz.netlify.app/
+
 ## Project Overview
 
 The application showcases two custom hooks with interactive demo components that highlight their functionality and benefits. Built with React, TypeScript, and Vite.
